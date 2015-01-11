@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.map.Terrain" table="TBL_TERRAINS">
+        <cache usage="read-only"/>
+        <id name="id" column="TERRAIN_ID">
+            <generator class="native"/>
+        </id>
+        <property name="code"/>
+        <property name="name"/>
+        <property name="mps"/>
+        <property name="mpsWinter"/>
+        <property name="maxDensity"/>
+        <property name="attritionOwn"/>
+        <property name="attritionForeign"/>
+    </class>
+</hibernate-mapping>

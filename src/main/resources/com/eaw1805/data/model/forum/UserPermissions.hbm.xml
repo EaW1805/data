@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.forum.UserPermissions" table="phpbb_acl_users">
+
+        <id name="id" column="perm_id">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="user"
+                     column="user_id"
+                     class="com.eaw1805.data.model.User"
+                     cascade="none"
+                     lazy="false"/>
+        <property name="forumId" column="forum_id"/>
+        <property name="authRoleId" column="auth_role_id"/>
+    </class>
+</hibernate-mapping>

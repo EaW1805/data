@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.map.Sector" table="SECTORS">
+        <cache usage="read-write"/>
+        <id name="id" column="SECTOR_ID">
+            <generator class="native"/>
+        </id>
+
+        <component name="position" class="com.eaw1805.data.model.map.Position">
+            <property name="x"/>
+            <property name="y"/>
+            <many-to-one name="region"
+                         column="REGION_ID"
+                         lazy="false"
+                         class="com.eaw1805.data.model.map.Region"/>
+            <many-to-one name="game"
+                         column="GAME_ID"
+                         lazy="false"
+                         class="com.eaw1805.data.model.Game"/>
+        </component>
+
+        <property name="population"/>
+
+        <many-to-one name="terrain"
+                     column="TERRAIN_ID"
+                     class="com.eaw1805.data.model.map.Terrain"
+                     cascade="none"
+                     lazy="false"/>
+
+        <many-to-one name="naturalResource"
+                     column="NATURAL_RESOURCE_ID"
+                     class="com.eaw1805.data.model.map.NaturalResource"
+                     cascade="none"
+                     lazy="false"/>
+
+        <many-to-one name="productionSite"
+                     column="PRODUCTION_SITE_ID"
+                     class="com.eaw1805.data.model.map.ProductionSite"
+                     cascade="none"
+                     lazy="false"/>
+
+        <many-to-one name="nation"
+                     column="NATION_ID"
+                     class="com.eaw1805.data.model.Nation"
+                     cascade="none"
+                     lazy="false"/>
+
+        <many-to-one name="tempNation"
+                     column="TEMP_NATION_ID"
+                     class="com.eaw1805.data.model.Nation"
+                     cascade="none"
+                     lazy="false"/>
+
+        <property name="politicalSphere"/>
+        <property name="buildProgress"/>
+        <property name="conqueredCounter"/>
+        <property name="tradeCity"/>
+        <property name="epidemic"/>
+        <property name="rebelled"/>
+        <property name="payed"/>
+        <property name="conquered"/>
+        <property name="storm"/>
+        <property name="name"/>
+        <property name="image"/>
+        <property name="imageGeo"/>
+        <property name="fow"/>
+        <property name="riverNorth"/>
+        <property name="riverEast"/>
+        <property name="riverSouth"/>
+        <property name="riverWest"/>
+        <property name="climaticZone"/>
+
+    </class>
+</hibernate-mapping>

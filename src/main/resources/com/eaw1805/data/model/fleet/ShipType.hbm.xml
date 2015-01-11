@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.fleet.ShipType" table="TBL_SHIPTYPES">
+        <cache usage="read-only"/>
+        <id name="typeId" column="TYPE_ID">
+            <generator class="native"/>
+        </id>
+        <property name="intId" column="id"/>
+        <property name="name"/>
+        <property name="canColonies"/>
+        <property name="wood"/>
+        <property name="indPt"/>
+        <property name="fabrics" column="Tex"/>
+        <property name="citizens" column="Citz"/>
+        <property name="cost"/>
+        <property name="maintenance" column="MAIN"/>
+        <property name="loadCapacity" column="LC"/>
+        <property name="movementFactor" column="MF"/>
+        <property name="shipClass" column="SC"/>
+    </class>
+</hibernate-mapping>

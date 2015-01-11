@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.PaymentHistory" table="PAYMENT_HISTORY">
+        <cache usage="read-write"/>
+        <id name="paymentHistoryId" column="PAYMENT_ID">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="user"
+                     column="USER_ID"
+                     class="com.eaw1805.data.model.User"
+                     cascade="none"
+                     lazy="false"/>
+
+        <property name="date"/>
+        <property name="method"/>
+        <property name="type"/>
+        <property name="comment"/>
+
+        <many-to-one name="agent"
+                     column="AGENT_ID"
+                     class="com.eaw1805.data.model.User"
+                     cascade="none"
+                     lazy="false"/>
+        <property name="creditBought"/>
+        <property name="creditFree"/>
+        <property name="creditTransferred"/>
+        <property name="discount"/>
+        <property name="chargeBought"/>
+        <property name="chargeFree"/>
+        <property name="chargeTransferred"/>
+    </class>
+</hibernate-mapping>

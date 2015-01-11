@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!--MYSQL-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/empire-s1</property>
+
+        <property name="hibernate.c3p0.acquire_increment">5</property>
+        <property name="hibernate.c3p0.idle_test_period">600</property>
+        <property name="hibernate.c3p0.timeout">25200</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_statements">0</property>
+        <property name="hibernate.c3p0.preferredTestQuery">select 1;</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable second-level cache  -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+        <property name="hibernate.cache.use_query_cache">false</property>
+        <!--<property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>-->
+        <!--<property name="hibernate.cache.provider_configuration_file_resource_path">/ehcache.xml</property>-->
+
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <!--<property name="hibernate.hbm2ddl.auto">update</property>-->
+
+        <property name="hibernate.order_updates">true</property>
+
+        <!-- Mapping files -->
+        <mapping resource="com/eaw1805/data/model/Game.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/UserGame.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/GameSettings.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/WatchGame.hbm.xml"/>
+
+        <mapping resource="com/eaw1805/data/model/Nation.hbm.xml"/>
+
+        <mapping resource="com/eaw1805/data/model/PlayerOrder.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/NationsRelation.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/News.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/Report.hbm.xml"/>
+
+        <!-- Map related -->
+        <mapping resource="com/eaw1805/data/model/map/Barrack.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/map/Region.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/map/Sector.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/map/NaturalResource.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/map/Terrain.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/map/ProductionSite.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/map/JumpOff.hbm.xml"/>
+
+        <!-- Army related -->
+        <mapping resource="com/eaw1805/data/model/army/ArmyType.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/army/Army.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/army/Battalion.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/army/Brigade.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/army/Commander.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/army/CommanderName.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/army/Corp.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/army/Rank.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/army/Spy.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/battles/TacticalBattleReport.hbm.xml"/>
+
+        <!-- Fleet related -->
+        <mapping resource="com/eaw1805/data/model/fleet/Fleet.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/fleet/Ship.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/fleet/ShipType.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/battles/NavalBattleReport.hbm.xml"/>
+
+        <!-- Economy related -->
+        <mapping resource="com/eaw1805/data/model/economy/BaggageTrain.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/economy/Good.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/economy/TradeCity.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/economy/Warehouse.hbm.xml"/>
+
+        <!-- Field Battle related -->
+        <mapping resource="com/eaw1805/data/model/battles/FieldBattleReport.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/battles/field/FieldBattleMap.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/battles/field/FieldBattleSector.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/battles/field/FieldBattleTerrain.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/battles/field/FieldBattleMapExtraFeature.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/battles/field/Order.hbm.xml"/>
+        <mapping resource="com/eaw1805/data/model/battles/field/UserFieldBattle.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>

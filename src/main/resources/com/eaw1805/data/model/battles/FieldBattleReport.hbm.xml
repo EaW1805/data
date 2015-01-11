@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.battles.FieldBattleReport" table="BATTLES_FIELD">
+        <cache usage="read-write"/>
+        <id name="battleId" column="BATTLE_ID">
+            <generator class="native"/>
+        </id>
+
+        <component name="position" class="com.eaw1805.data.model.map.Position">
+            <property name="x"/>
+            <property name="y"/>
+            <many-to-one name="region"
+                         column="REGION_ID"
+                         lazy="false"
+                         class="com.eaw1805.data.model.map.Region"/>
+            <many-to-one name="game"
+                         column="GAME_ID"
+                         lazy="false"
+                         class="com.eaw1805.data.model.Game"/>
+        </component>
+
+        <property name="turn"/>
+
+        <set name="side1"
+             lazy="false"
+             table="BATTLES_FIELD_SIDE1">
+            <key column="BATTLE_ID"/>
+            <many-to-many class="com.eaw1805.data.model.Nation"
+                          column="NATION_ID"/>
+        </set>
+
+        <set name="side2"
+             lazy="false"
+             table="BATTLES_FIELD_SIDE2">
+            <key column="BATTLE_ID"/>
+            <many-to-many class="com.eaw1805.data.model.Nation"
+                          column="NATION_ID"/>
+        </set>
+
+        <many-to-one name="comm1"
+                     column="COMM1_ID"
+                     lazy="false"
+                     class="com.eaw1805.data.model.army.Commander"/>
+
+        <many-to-one name="comm2"
+                     column="COMM2_ID"
+                     lazy="false"
+                     class="com.eaw1805.data.model.army.Commander"/>
+
+        <property name="winner"/>
+        <property name="stats" length="1000000000"/>
+        <property name="stage"/>
+        <property name="round"/>
+        <property name="brigadesThatMovedInPreviousHalfround" />
+        <property name="initialMoraleContributions" length="1000000000" />
+        <property name="status"/>
+        <property name="nextProcessDate"/>
+        <property name="ownerId"/>
+        <property name="scenarioBattle"/>
+        <property name="name"/>
+
+    </class>
+</hibernate-mapping>

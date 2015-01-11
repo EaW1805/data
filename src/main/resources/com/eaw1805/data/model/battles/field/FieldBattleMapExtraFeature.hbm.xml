@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.battles.field.FieldBattleMapExtraFeature" table="TBL_FIELD_BATTLE_MAP_EXTRA_FEATURES">
+        <cache usage="read-only"/>
+        <id name="id" column="FIELD_BATTLE_MAP_EXTRA_FEATURE_ID">
+            <generator class="native"/>
+        </id>
+        <property name="name"/>
+    </class>
+</hibernate-mapping>

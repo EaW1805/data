@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.army.CommanderName" table="TBL_COMMANDER_NAMES">
+        <cache usage="read-write"/>
+        <id name="nameId" column="TYPE_ID">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="nation"
+                     column="NATION_ID"
+                     class="com.eaw1805.data.model.Nation"/>
+
+        <property name="position"/>
+        <property name="name"/>
+        <many-to-one name="game"
+                     column="GAME_ID"
+                     lazy="false"
+                     class="com.eaw1805.data.model.Game"/>
+    </class>
+</hibernate-mapping>

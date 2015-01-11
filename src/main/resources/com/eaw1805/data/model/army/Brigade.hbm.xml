@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.army.Brigade" table="BRIGADES">
+        <cache usage="read-write"/>
+        <id name="brigadeId" column="BRIGADE_ID">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="nation"
+                     column="NATION_ID"
+                     class="com.eaw1805.data.model.Nation"
+                     lazy="false"/>
+
+        <component name="position" lazy="false" class="com.eaw1805.data.model.map.Position">
+            <property name="x"/>
+            <property name="y"/>
+            <many-to-one name="region"
+                         column="REGION_ID"
+                         lazy="false"
+                         class="com.eaw1805.data.model.map.Region"/>
+            <many-to-one name="game"
+                         column="GAME_ID"
+                         lazy="false"
+                         class="com.eaw1805.data.model.Game"/>
+        </component>
+
+        <component name="fieldBattlePosition" lazy="false" class="com.eaw1805.data.model.battles.field.FieldBattlePosition">
+            <property name="x" column="FIELD_BATTLE_X"/>
+            <property name="y" column="FIELD_BATTLE_Y"/>
+            <property name="placed" column="FIELD_BATTLE_PLACED"/>
+        </component>
+
+        <property name="name"/>
+        <property name="mps"/>
+        <property name="corp" column="CORP_ID"/>
+
+        <set name="battalions" table="BATTALIONS"
+             cascade="all"
+             order-by="SLOT_ID,BATTALION_ID"
+             lazy="false">
+            <cache usage="read-write"/>
+            <key column="BRIGADE_ID"/>
+            <one-to-many class="com.eaw1805.data.model.army.Battalion"/>
+        </set>
+
+        <property name="formation"/>
+        <property name="armType"/>
+
+        <many-to-one name="basicOrder"
+                     class="com.eaw1805.data.model.battles.field.Order"
+                     unique="true"
+                     column="BASIC_ORDER_ID"
+                     cascade="all"
+                     lazy="false"/>
+
+        <many-to-one name="additionalOrder"
+                     class="com.eaw1805.data.model.battles.field.Order"
+                     unique="true"
+                     column="ADDITIONAL_ORDER_ID"
+                     cascade="all"
+                     lazy="false"/>
+        <property name="fromInit"/>
+        <property name="fieldBattleCommanderId"/>
+        <property name="fieldBattleOverallCommanderId"/>
+    </class>
+</hibernate-mapping>

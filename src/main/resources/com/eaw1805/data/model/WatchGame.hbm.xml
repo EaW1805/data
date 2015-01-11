@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.WatchGame" table="WATCH_GAMES">
+        <cache usage="read-write"/>
+        <id name="watchGameId" column="WATCH_GAME_ID">
+            <generator class="native"/>
+        </id>
+
+        <property name="userId" column="USER_ID"/>
+        <many-to-one name="game"
+                     column="GAME_ID"
+                     class="com.eaw1805.data.model.Game"
+                     cascade="none"
+                     lazy="false"/>
+
+    </class>
+</hibernate-mapping>
