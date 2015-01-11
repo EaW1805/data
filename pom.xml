@@ -6,6 +6,7 @@
 
     <groupId>eaw1805</groupId>
     <artifactId>data</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <name>Eaw1805 Data Model and Managers</name>
@@ -51,7 +52,6 @@
 
         <!--#################################################################################################-->
         <!-- HIBERNATE -->
-
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
