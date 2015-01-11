@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.Message" table="MESSAGES">
+        <cache usage="read-write"/>
+        <id name="messageId" column="MESSAGE_ID">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="sender"
+                     column="SENDER_ID"
+                     class="com.eaw1805.data.model.User"
+                     cascade="none"
+                     lazy="false"/>
+
+        <many-to-one name="receiver"
+                     column="RECEIVER_ID"
+                     class="com.eaw1805.data.model.User"
+                     cascade="none"
+                     lazy="false"/>
+
+        <property name="bodyMessage" type="text"/>
+        <property name="subject"/>
+        <property name="date"/>
+        <property name="rootId"/>
+        <property name="opened"/>
+        <property name="deletedSender" type="boolean"/>
+        <property name="deletedReceiver" type="boolean"/>
+    </class>
+</hibernate-mapping>

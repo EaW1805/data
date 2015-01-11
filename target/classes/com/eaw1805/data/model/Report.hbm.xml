@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.Report" table="REPORTS">
+        <cache usage="read-write"/>
+        <id column="REPORT_ID" name="id">
+            <generator class="native"/>
+        </id>
+        <many-to-one cascade="none" class="com.eaw1805.data.model.Game" column="GAME_ID" name="game"/>
+        <property name="turn"/>
+        <many-to-one cascade="none" class="com.eaw1805.data.model.Nation" column="NATION_ID" name="nation"/>
+        <property column="REPORT_KEY" name="key"/>
+        <property column="REPORT_VALUE" name="value"/>
+    </class>
+</hibernate-mapping>

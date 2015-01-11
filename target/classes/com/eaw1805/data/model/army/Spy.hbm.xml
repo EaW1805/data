@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.army.Spy" table="SPIES">
+        <cache usage="read-write"/>
+        <id name="spyId" column="SPY_ID">
+            <generator class="native"/>
+        </id>
+
+        <component name="position" class="com.eaw1805.data.model.map.Position">
+            <property name="x"/>
+            <property name="y"/>
+            <many-to-one name="region"
+                         column="REGION_ID"
+                         lazy="false"
+                         class="com.eaw1805.data.model.map.Region"/>
+            <many-to-one name="game"
+                         column="GAME_ID"
+                         lazy="false"
+                         class="com.eaw1805.data.model.Game"/>
+        </component>
+
+        <property name="name"/>
+
+        <many-to-one name="nation"
+                     column="NATION_ID"
+                     lazy="false"
+                     class="com.eaw1805.data.model.Nation"/>
+
+        <property name="stationary"/>
+        <property name="colonial"/>
+        <property name="reportBattalions" type="text"/>
+        <property name="reportBrigades" type="text"/>
+        <property name="reportShips" type="text"/>
+        <property name="reportNearbyShips" type="text"/>
+        <property name="reportTrade" type="text"/>
+        <property name="reportRelations"/>
+
+        <component name="carrierInfo" class="com.eaw1805.data.model.map.CarrierInfo">
+            <property name="carrierType"/>
+            <property name="carrierId"/>
+        </component>
+    </class>
+</hibernate-mapping>

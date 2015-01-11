@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.UserGame" table="USERS_GAMES">
+        <cache usage="read-write"/>
+        <id name="id" column="USERS_GAMES_ID">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="game"
+                     column="GAME_ID"
+                     class="com.eaw1805.data.model.Game"
+                     cascade="none"
+                     lazy="false"/>
+
+        <many-to-one name="nation"
+                     column="NATION_ID"
+                     class="com.eaw1805.data.model.Nation"
+                     cascade="none"
+                     lazy="false"/>
+
+        <property name="userId" column="USER_ID"/>
+
+        <property name="turnPickUp"/>
+        <property name="turnDrop"/>
+        <property name="alive"/>
+        <property name="active"/>
+        <property name="hasWon"/>
+        <property name="cost"/>
+        <property name="turnFirstLoad"/>
+        <property name="current"/>
+        <property name="offer"/>
+        <property name="accepted"/>
+        <property name="resultViewed"/>
+
+    </class>
+</hibernate-mapping>

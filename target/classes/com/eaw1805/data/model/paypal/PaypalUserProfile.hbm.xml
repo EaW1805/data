@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.paypal.PaypalUserProfile" table="PAYPAL_USER_PROFILE">
+        <cache usage="read-write"/>
+        <id name="id" column="PROFILE_ID">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="user"
+                     column="USER_ID"
+                     class="com.eaw1805.data.model.User"
+                     cascade="none"
+                     lazy="false"/>
+
+        <property name="payerID"/>
+        <property name="payer"/>
+        <property name="payerStatus"/>
+        <property name="salutation"/>
+        <property name="firstName"/>
+        <property name="middleName"/>
+        <property name="lastName"/>
+        <property name="suffix"/>
+        <property name="countryCodeType"/>
+        <property name="name"/>
+        <property name="street1"/>
+        <property name="street2"/>
+        <property name="cityName"/>
+        <property name="stateOrProvince"/>
+        <property name="countryName"/>
+        <property name="phone"/>
+        <property name="postalCode"/>
+        <property name="addressStatus"/>
+    </class>
+</hibernate-mapping>

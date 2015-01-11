@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.Nation"
+           table="TBL_NATIONS">
+        <cache usage="read-write"/>
+
+        <id name="id" column="NATION_ID">
+            <generator class="native"/>
+        </id>
+        <property name="code"/>
+        <property name="name"/>
+        <property name="taxRate"/>
+        <property name="sphereOfInfluence" column="politicalSphere"/>
+        <property name="color"/>
+        <property name="morale"/>
+        <property name="vpInit"/>
+        <property name="vpWin"/>
+        <property name="cost"/>
+    </class>
+</hibernate-mapping>

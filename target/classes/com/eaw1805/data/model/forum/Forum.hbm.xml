@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.forum.Forum" table="phpbb_forums">
+
+        <id name="forumId" column="forum_id">
+            <generator class="native"/>
+        </id>
+
+        <property name="parentId" column="parent_id"/>
+        <property name="leftId" column="left_id"/>
+        <property name="rightId" column="right_id"/>
+        <property name="forumParents" column="forum_parents"/>
+        <property name="forumName" column="forum_name"/>
+        <property name="forumDesc" column="forum_desc"/>
+        <property name="forumDescBitfield" column="forum_desc_bitfield"/>
+        <property name="forumDescOptions" column="forum_desc_options"/>
+        <property name="forumDescUid" column="forum_desc_uid"/>
+        <property name="forumLink" column="forum_link"/>
+        <property name="forumPassword" column="forum_password"/>
+        <property name="forumStyle" column="forum_style"/>
+        <property name="forumImage" column="forum_image"/>
+        <property name="forumRules" column="forum_rules"/>
+        <property name="forumRulesLink" column="forum_rules_link"/>
+        <property name="forumRulesBitfield" column="forum_rules_bitfield"/>
+        <property name="forumRulesOptions" column="forum_rules_options"/>
+        <property name="forumRulesUid" column="forum_rules_uid"/>
+        <property name="forumTopicsPerPage" column="forum_topics_per_page"/>
+        <property name="forumType" column="forum_type"/>
+        <property name="forumStatus" column="forum_status"/>
+        <property name="forumPosts" column="forum_posts"/>
+        <property name="forumTopics" column="forum_topics"/>
+        <property name="forumTopicsReal" column="forum_topics_real"/>
+        <property name="forumLastPostId" column="forum_last_post_id"/>
+        <property name="forumLastPosterId" column="forum_last_poster_id"/>
+        <property name="forumLastPostSubject" column="forum_last_post_subject"/>
+        <property name="forumLastPostTime" column="forum_last_post_time"/>
+        <property name="forumLastPosterName" column="forum_last_poster_name"/>
+        <property name="forumLastPosterColour" column="forum_last_poster_colour"/>
+        <property name="forumFlags" column="forum_flags"/>
+        <property name="forumOptions" column="forum_options"/>
+        <property name="displaySubforumList" column="display_subforum_list"/>
+        <property name="displayOnIndex" column="display_on_index"/>
+        <property name="enableIndexing" column="enable_indexing"/>
+        <property name="enableIcons" column="enable_icons"/>
+        <property name="enablePrune" column="enable_prune"/>
+        <property name="pruneNext" column="prune_next"/>
+        <property name="pruneDays" column="prune_days"/>
+        <property name="pruneViewed" column="prune_viewed"/>
+        <property name="pruneFreq" column="prune_freq"/>
+
+    </class>
+</hibernate-mapping>

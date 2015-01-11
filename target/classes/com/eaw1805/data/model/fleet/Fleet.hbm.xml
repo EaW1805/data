@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.eaw1805.data.model.fleet.Fleet" table="FLEETS">
+        <cache usage="read-write"/>
+        <id name="fleetId" column="FLEET_ID">
+            <generator class="native"/>
+        </id>
+
+        <component name="position" class="com.eaw1805.data.model.map.Position">
+            <property name="x"/>
+            <property name="y"/>
+            <many-to-one name="region"
+                         column="REGION_ID"
+                         class="com.eaw1805.data.model.map.Region"
+                         lazy="false"/>
+            <many-to-one name="game"
+                         column="GAME_ID"
+                         class="com.eaw1805.data.model.Game"
+                         lazy="false"/>
+        </component>
+
+        <property name="name"/>
+        <property name="mps"/>
+
+        <many-to-one name="nation"
+                     column="NATION_ID"
+                     class="com.eaw1805.data.model.Nation"
+                     lazy="false"/>
+
+        <many-to-one name="commander"
+                     column="COMMANDER_ID"
+                     lazy="false"
+                     class="com.eaw1805.data.model.army.Commander"/>
+
+    </class>
+</hibernate-mapping>
