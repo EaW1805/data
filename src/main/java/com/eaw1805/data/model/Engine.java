@@ -11,6 +11,15 @@ import java.util.Random;
  */
 public interface Engine {
 
+    public static final int MAX_THREADS = 3;
+
+    /**
+     * Engine name.
+     *
+     * @return the name of the engine.
+     */
+    String getName();
+
     /**
      * Game object of the turn processed.
      *
