@@ -1,0 +1,16 @@
+<module>
+    <source path="data/constants"/>
+    <source path="data/dto"/>
+    <source path="data/dto/collections"/>
+    <source path="data/dto/common"/>
+    <source path="data/dto/converters"/>
+    <source path="data/dto/editor"/>
+    <source path="data/dto/web"/>
+    <source path="data/dto/web/movement"/>
+    <source path="data/model"/>
+    <source path="data/model/army"/>
+    <source path="data/model/fleet"/>
+    <source path="data/model/map"/>
+    <source path="data/managers/beans"/>
+    <source path="data/model/map"/>
+</module>
