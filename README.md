@@ -26,6 +26,25 @@ This module is not intended to run as a stand-alone mode. It is a core module to
 Some test cases are included to test the operation of the data managers.
 
 
+## Maven Repository
+
+The artifacts of the project are publicly available by the maven repository hosted on github.
+
+Configure any poms that depend on the data artifact by adding the following snippet to your pom file:
+
+```
+<repositories>
+    <repository>
+        <id>EaW1805-data-mvn-repo</id>
+        <url>https://raw.github.com/EaW1805/data/mvn-repo/</url>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+</repositories>
+```
+
 ## Structure
 
 The module comprises of the following main components:
