@@ -17,13 +17,13 @@ public class Game implements Serializable {
      */
     static final long serialVersionUID = 42L; //NOPMD
 
-    public static int BET_SHARING_WINNERS = 1;
-    public static int BET_SHARING_WINNERS_RUNNERUPS = 2;
-    public static int BET_SHARING_SURVIVORS = 3;
+    public static final int BET_SHARING_WINNERS = 1;
+    public static final int BET_SHARING_WINNERS_RUNNERUPS = 2;
+    public static final int BET_SHARING_SURVIVORS = 3;
 
-    public static int TYPE_SHORT = -1;
-    public static int TYPE_NORMAL = 0;
-    public static int TYPE_EPIC = 1;
+    public static final int TYPE_SHORT = -1;
+    public static final int TYPE_NORMAL = 0;
+    public static final int TYPE_EPIC = 1;
 
     /**
      * Game's ID.
@@ -1141,11 +1141,13 @@ public class Game implements Serializable {
      */
     public String getTypeToString() {
         switch (type) {
-            case -1:
+            case TYPE_SHORT:
                 return "Short";
-            case 0:
+
+            case TYPE_NORMAL:
                 return "Normal";
-            case 1:
+
+            case TYPE_EPIC:
                 return "Epic";
         }
         return "";
@@ -1160,11 +1162,13 @@ public class Game implements Serializable {
      */
     public String getBetSharingToString() {
         switch (betSharing) {
-            case 1:
+            case BET_SHARING_WINNERS:
                 return "Winners";
-            case 2:
+
+            case BET_SHARING_WINNERS_RUNNERUPS:
                 return "Winners and runner ups";
-            case 3:
+
+            case BET_SHARING_SURVIVORS:
                 return "Survivors";
         }
         return "";
