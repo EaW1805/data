@@ -10,6 +10,7 @@ import org.hibernate.criterion.Restrictions;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -86,11 +87,39 @@ public class PaymentHistoryManager extends AbstractManager<PaymentHistory>
         return super.list(new PaymentHistory());
     }
 
+    /**
+     * Listing all the UserGames from the database for this particular user.
+     *
+     * @param user the particular user to examine.
+     * @return a list of all the PaymentHistory that exist inside the table Avatar.
+     */
     @SuppressWarnings("unchecked")
     public List<PaymentHistory> list(final User user) {
         final Session session = getSessionFactory().getCurrentSession();
         final Criteria criteria = session.createCriteria(PaymentHistory.class);
         criteria.add(Restrictions.eq("user", user))
+                .addOrder(Order.desc("date"));
+        return criteria.list();
+    }
+
+    /**
+     * Listing all the UserGames from the database for this particular user made during the current week.
+     *
+     * @param user the particular user to examine.
+     * @return a list of all the PaymentHistory that exist inside the table Avatar.
+     */
+    @SuppressWarnings("unchecked")
+    public List<PaymentHistory> listWeekly(final User user) {
+        // Find first day of week
+        final Calendar thisCal = Calendar.getInstance();
+        thisCal.add(Calendar.DATE, -thisCal.get(Calendar.DAY_OF_WEEK));
+        thisCal.set(Calendar.HOUR, 0);
+        thisCal.set(Calendar.MINUTE, 0);
+
+        final Session session = getSessionFactory().getCurrentSession();
+        final Criteria criteria = session.createCriteria(PaymentHistory.class);
+        criteria.add(Restrictions.eq("user", user))
+                .add(Restrictions.ge("date", thisCal.getTime()))
                 .addOrder(Order.desc("date"));
         return criteria.list();
     }

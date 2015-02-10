@@ -48,7 +48,21 @@ public interface PaymentHistoryManagerBean extends EntityBean {
      */
     List<PaymentHistory> list();
 
+    /**
+     * Listing all the UserGames from the database for this particular user.
+     *
+     * @param user the particular user to examine.
+     * @return a list of all the PaymentHistory that exist inside the table Avatar.
+     */
     List<PaymentHistory> list(final User user);
+
+    /**
+     * Listing all the UserGames from the database for this particular user made during the current week.
+     *
+     * @param user the particular user to examine.
+     * @return a list of all the PaymentHistory that exist inside the table Avatar.
+     */
+    List<PaymentHistory> listWeekly(final User user);
 
     /**
      * Total credits charged per each week of the year.
