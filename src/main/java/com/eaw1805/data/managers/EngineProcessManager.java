@@ -8,6 +8,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import java.math.BigInteger;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -98,6 +99,32 @@ public class EngineProcessManager
         final Criteria criteria = session.createCriteria(EngineProcess.class);
         criteria.add(Restrictions.eq("gameId", gameId));
         criteria.add(Restrictions.eq("scenarioId", scenarioID));
+        criteria.addOrder(Order.asc("procId"));
+
+        return criteria.list();
+    }
+
+    /**
+     * Listing all the processes for a particular Game from the database that are ready to be processed
+     * within the ongoing week.
+     *
+     * @param gameId     the game ID to look up.
+     * @param scenarioID the scenario ID to look up.
+     * @return a list of processes related to the particular game.
+     */
+    @SuppressWarnings("unchecked")
+    public List<EngineProcess> listGameWeekly(final int gameId, final int scenarioID) {
+        // Find first day of week
+        final Calendar thisCal = Calendar.getInstance();
+        thisCal.add(Calendar.DATE, -thisCal.get(Calendar.DAY_OF_WEEK));
+        thisCal.set(Calendar.HOUR, 0);
+        thisCal.set(Calendar.MINUTE, 0);
+
+        final Session session = getSessionFactory().getCurrentSession();
+        final Criteria criteria = session.createCriteria(EngineProcess.class);
+        criteria.add(Restrictions.eq("gameId", gameId));
+        criteria.add(Restrictions.eq("scenarioId", scenarioID));
+        criteria.add(Restrictions.ge("dateStart", thisCal.getTime()));
         criteria.addOrder(Order.asc("procId"));
 
         return criteria.list();

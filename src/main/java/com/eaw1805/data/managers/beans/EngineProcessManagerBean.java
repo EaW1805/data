@@ -58,6 +58,16 @@ public interface EngineProcessManagerBean extends EntityBean {
     List<EngineProcess> listGame(final int gameId, final int scenarioID);
 
     /**
+     * Listing all the processes for a particular Game from the database that are ready to be processed
+     * within the ongoing week.
+     *
+     * @param gameId     the game ID to look up.
+     * @param scenarioID the scenario ID to look up.
+     * @return a list of processes related to the particular game.
+     */
+    List<EngineProcess> listGameWeekly(final int gameId, final int scenarioID);
+
+    /**
      * get the latest EngineProcess from the database that corresponds to the input id.
      *
      * @param gameId     the game ID to look up.
