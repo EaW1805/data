@@ -24,7 +24,7 @@ public class TransportUnitDTO
     static final long serialVersionUID = 39L; //NOPMD
 
     /**
-     * A map that contains all loaded units in the form <UnitType,List of Ids of the type>.
+     * A map that contains all loaded units in the form [UnitType,List of Ids of the type].
      */
     private Map<Integer, List<Integer>> loadedUnitsMap = new HashMap<Integer, List<Integer>>();
 

@@ -116,7 +116,6 @@ public class Region implements Serializable {
 
     /**
      * Indicates whether some other object is "equal to" this one.
-     * <p/>
      * The <code>equals</code> method implements an equivalence relation
      * on non-null object references:
      * <ul>
@@ -141,14 +140,12 @@ public class Region implements Serializable {
      * <li>For any non-null reference value <code>x</code>,
      * <code>x.equals(null)</code> should return <code>false</code>.
      * </ul>
-     * <p/>
      * The <tt>equals</tt> method for class <code>Object</code> implements
      * the most discriminating possible equivalence relation on objects;
      * that is, for any non-null reference values <code>x</code> and
      * <code>y</code>, this method returns <code>true</code> if and only
      * if <code>x</code> and <code>y</code> refer to the same object
      * (<code>x == y</code> has the value <code>true</code>).
-     * <p/>
      * Note that it is generally necessary to override the <tt>hashCode</tt>
      * method whenever this method is overridden, so as to maintain the
      * general contract for the <tt>hashCode</tt> method, which states
@@ -156,7 +153,7 @@ public class Region implements Serializable {
      *
      * @param obj the reference object with which to compare.
      * @return <code>true</code> if this object is the same as the obj
-     *         argument; <code>false</code> otherwise.
+     * argument; <code>false</code> otherwise.
      * @see #hashCode()
      * @see java.util.Hashtable
      */
@@ -189,7 +186,6 @@ public class Region implements Serializable {
      * Returns a hash code value for the object. This method is
      * supported for the benefit of hashtables such as those provided by
      * <code>java.util.Hashtable</code>.
-     * <p/>
      * The general contract of <code>hashCode</code> is:
      * <ul>
      * <li>Whenever it is invoked on the same object more than once during
@@ -208,7 +204,6 @@ public class Region implements Serializable {
      * programmer should be aware that producing distinct integer results
      * for unequal objects may improve the performance of hashtables.
      * </ul>
-     * <p/>
      * As much as is reasonably practical, the hashCode method defined by
      * class <tt>Object</tt> does return distinct integers for distinct
      * objects. (This is typically implemented by converting the internal

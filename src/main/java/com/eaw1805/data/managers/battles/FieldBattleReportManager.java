@@ -113,7 +113,6 @@ public class FieldBattleReportManager
     /**
      * Listing all FieldBattleReport from the database owned by the specific nation.
      *
-     * @param thisGame the game to select.
      * @return a list of all the Armies.
      */
     @SuppressWarnings("unchecked")

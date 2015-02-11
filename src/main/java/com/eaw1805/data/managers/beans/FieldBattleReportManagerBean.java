@@ -88,7 +88,7 @@ public interface FieldBattleReportManagerBean extends EntityBean {
      *
      * @param thisGame the game to select.
      * @param nation   the nation to select.
-     * @param the      turn
+     * @param turn     the turn
      * @return a list of all the Armies.
      */
     List<FieldBattleReport> listGameNationTurn(final Game thisGame, final Nation nation, final int turn);

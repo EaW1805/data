@@ -398,7 +398,7 @@ public class FieldBattleReport implements Serializable {
     /**
      * Set the creators id.
      *
-     * @param ownerId The creators id.
+     * @param value The creators id.
      */
     public void setOwnerId(final int value) {
         this.ownerId = value;

@@ -203,7 +203,7 @@ public class Carrier implements Serializable {
     }
 
     /**
-     * Update the movement & engage counters of loaded entities.
+     * Update the movement and engage counters of loaded entities.
      *
      * @param willBattle the unit will engage in a battle.
      */

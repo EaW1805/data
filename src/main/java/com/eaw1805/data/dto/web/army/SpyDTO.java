@@ -299,9 +299,9 @@ public class SpyDTO
     }
 
     /**
-     * Get the spy's movement points.
+     * Set the spy's movement points.
      *
-     * @return the spy's movement points.
+     * @param spyMP the spy's movement points.
      */
     public void setSpyMP(final int spyMP) {
         this.spyMP = spyMP;

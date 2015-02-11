@@ -9,7 +9,7 @@ import com.eaw1805.data.model.battles.TacticalBattleReport;
 import java.util.Map;
 
 /**
- * Convert Tactical & Naval Battle report objects.
+ * Convert Tactical and Naval Battle report objects.
  */
 public final class BattleConverter implements RelationConstants {
 

@@ -75,7 +75,6 @@ public class WatchGame implements Serializable {
      * Returns a hash code value for the object. This method is
      * supported for the benefit of hashtables such as those provided by
      * <code>java.util.Hashtable</code>.
-     * <p/>
      * The general contract of <code>hashCode</code> is:
      * <ul>
      * <li>Whenever it is invoked on the same object more than once during
@@ -94,7 +93,6 @@ public class WatchGame implements Serializable {
      * programmer should be aware that producing distinct integer results
      * for unequal objects may improve the performance of hashtables.
      * </ul>
-     * <p/>
      * As much as is reasonably practical, the hashCode method defined by
      * class <tt>Object</tt> does return distinct integers for distinct
      * objects. (This is typically implemented by converting the internal
