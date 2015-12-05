@@ -171,8 +171,8 @@ public class FieldBattleHalfRoundStatisticsConverter {
             out.setMoraleSide0(logs.getMoraleSide0());
             out.setMoraleSide1(logs.getMoraleSide1());
         } catch (Exception e) {
-            out.setMoraleSide0(rand.nextInt(100));
-            out.setMoraleSide1(rand.nextInt(100));
+            out.setMoraleSide0(rand.nextInt(101));
+            out.setMoraleSide1(rand.nextInt(101));
         }
         return out;
     }
