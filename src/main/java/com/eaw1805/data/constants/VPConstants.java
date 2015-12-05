@@ -344,4 +344,70 @@ public interface VPConstants {
      * US random event;
      */
     int VP_RE_US = -8;
+
+    /**
+     * Scenario 1808: Controlling a Trade City.
+     */
+    int CONTROL_TRADE_CITY = 1;
+
+    /**
+     * Scenario 1808: if capital under foreign occupation (Madrid, Lisbon, Bordeaux).
+     */
+    int CONTROL_CAPITAL = -2;
+
+    /**
+     * Scenario 1808: Napoleon leaves Peninsula, Joseph in charge of the war effort!
+     */
+    int NAPOLEON_LEAVES = -5;
+
+    /**
+     * Scenario 1808: Napoleon leaves Peninsula, Joseph in charge of the war effort!
+     */
+    int SCHONBRUNN_TREATY = 1;
+
+    /**
+     * Scenario 1808: Napoleon marries Marie-Louise of Austria.
+     */
+    int NAPOLEON_MARRIES = 1;
+
+    /**
+     * Scenario 1808: Marie-Louise bears Napoleon a son!
+     */
+    int NAPOLEON_GETSCHILD = 1;
+
+    /**
+     * Scenario 1808: The Sixth Coalition is formed! Napoleon invades Russia!
+     */
+    int NAPOLEON_INVADESRUSSIA = 5;
+
+    /**
+     * Scenario 1808: Napoleon enters Moscow!
+     */
+    int NAPOLEON_ENTERMOSCOW = 3;
+
+    /**
+     * Scenario 1808: Napoleon leaves Moscow.
+     */
+    int NAPOLEON_LEAVESMOSCOW = 1;
+
+    /**
+     * Scenario 1808: Yorck signs Convention of Tauroggen, Prussian Corps defects from Grand Armee).
+     */
+    int TAUROGGEN_CONVENTION = -1;
+
+    /**
+     * Scenario 1808: Prussia declares War on France!
+     */
+    int PRUSSIA_DECLARESWAR = 3;
+
+    /**
+     * Scenario 1808: Austria declares war on France!
+     */
+    int AUSTRIA_DECLARESWAR = 3;
+
+    /**
+     * Scenario 1808: Allies enter Paris!
+     */
+    int ALLIES_ENTERPARIS = 5;
+
 }
