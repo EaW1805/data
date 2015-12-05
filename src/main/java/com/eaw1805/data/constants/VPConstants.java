@@ -123,7 +123,7 @@ public interface VPConstants {
     /**
      * Build Fortresses huge.
      */
-    int BUILD_HUGE = 15;
+    int BUILD_HUGE = 5;
 
     /**
      * Conquering Fortresses huge.
