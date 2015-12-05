@@ -34,6 +34,7 @@
         <property name="peaceCount"/>
         <property name="surrenderCount"/>
         <property name="visible" column="visibleToAlly"/>
+        <property name="fixed"/>
 
     </class>
 </hibernate-mapping>

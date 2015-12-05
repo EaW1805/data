@@ -56,6 +56,11 @@ public class RelationDTO
     private boolean visible;
 
     /**
+     * Alliance status is fixed throughout the game.
+     */
+    private boolean fixed;
+
+    /**
      * Get the nation this relation refers to.
      *
      * @return the nation this relation refers to.
@@ -211,4 +216,23 @@ public class RelationDTO
     public void setVisible(boolean visible) {
         this.visible = visible;
     }
+
+    /**
+     * Get if Alliance status is fixed throughout the game.
+     *
+     * @return true, if Alliance status is fixed throughout the game.
+     */
+    public boolean getFixed() {
+        return fixed;
+    }
+
+    /**
+     * Set if the Alliance status is fixed throughout the game.
+     *
+     * @param value - true, if the Alliance status is fixed throughout the game.
+     */
+    public void setFixed(final boolean value) {
+        this.fixed = value;
+    }
+
 }

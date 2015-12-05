@@ -34,6 +34,7 @@ public final class RelationConverter {
         empireRelationDTO.setPeaceCount(value.getPeaceCount());
         empireRelationDTO.setSurrenderCount(value.getSurrenderCount());
         empireRelationDTO.setVisible(value.isVisible());
+        empireRelationDTO.setFixed(value.getFixed());
 
         // Get their relation towards us
         final NationsRelation theirNationsRelation = relationsManager.getByNations(value.getGame(),
