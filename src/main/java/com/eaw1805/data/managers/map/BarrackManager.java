@@ -72,7 +72,7 @@ public class BarrackManager
         final Session session = getSessionFactory().getCurrentSession();
         final Criteria criteria = session.createCriteria(Barrack.class);
         criteria.add(Restrictions.eq("id", BarrackId));
-        return (Barrack)criteria.uniqueResult();
+        return (Barrack) criteria.uniqueResult();
     }
 
     /**
@@ -81,12 +81,19 @@ public class BarrackManager
      * @param position the Position of the Barrack object.
      * @return an Barrack object.
      */
+    @SuppressWarnings("unchecked")
     public Barrack getByPosition(final Position position) {
         final Session session = getSessionFactory().getCurrentSession();
         final Criteria criteria = session.createCriteria(Barrack.class);
         criteria.add(Restrictions.eq("position", position));
+        criteria.addOrder(Order.asc("id"));
 
-        return (Barrack) criteria.uniqueResult();
+        final List<Barrack> list = criteria.list();
+        if (list.isEmpty()) {
+            return null;
+        } else {
+            return list.iterator().next();
+        }
     }
 
     /**
