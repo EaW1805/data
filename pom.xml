@@ -8,6 +8,8 @@
     <artifactId>data</artifactId>
     <version>1.0</version>
 
+    <packaging>jar</packaging>
+
     <name>Eaw1805 Data Model and Managers</name>
     <description>EaW1805 is a generic turn-based strategy game engine.
         Data module defines the data objects, relations and data management for the realization of turn-based strategy
@@ -19,6 +21,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+        <github.global.host>api.github.com</github.global.host>
         <github.global.server>github</github.global.server>
     </properties>
 
@@ -298,7 +301,7 @@
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
-                <version>0.11</version>
+                <version>0.12</version>
                 <configuration>
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->

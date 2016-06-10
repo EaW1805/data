@@ -5,7 +5,7 @@ Defines data objects, relations and data management for the turn-based strategy 
 
 ## Requirements
 
-1. Oracle Java 1.7 or newer
+1. Oracle Java 1.8 or newer
 2. Maven 3
 3. A working internet connection
 
