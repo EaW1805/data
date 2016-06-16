@@ -56,6 +56,9 @@ public interface StyleConstants {
 
     String VALUE_ZERO_FLOAT = "0.0";
 
+    String OFF_PIECE = "PieceOff";
+
+    String ON_PIECE = "PieceOn";
 
     String PNG = ".png";
 
